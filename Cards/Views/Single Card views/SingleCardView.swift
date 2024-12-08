@@ -9,36 +9,27 @@ import SwiftUI
 
 struct SingleCardView: View {
   @State private var currentModal: ToolbarSelection?
+  @Binding var card: Card
   
   var body: some View {
     NavigationStack {
-      content
+      CardDetailView(card: $card)
         .modifier(CardToolbar(currentModal: $currentModal))
-    }
-  }
-  
-  var content: some View {
-    ZStack {
-      Group {
-        Capsule()
-          .foregroundStyle(.yellow)
-        Text("Resize Me!")
-          .fontWeight(.bold)
-        // There is a trick to scaling text on demand. Give the font a huge size, say 500. Then apply a minimum scale factor to it, to reduce it in size.
-          .font(.system(size: 500))
-          .minimumScaleFactor(0.01)
-        // .lineLimit(1) ensures the text stays on one line and doesn’t wrap around.
-          .lineLimit(1)
-      }
-      .resizableView()
-      
-      Circle()
-        .resizableView()
-        .offset(CGSize(width: 50, height: 200))
     }
   }
 }
 
-#Preview {
-  SingleCardView()
+struct SingleCardView_Previews: PreviewProvider {
+  struct SingleCardPreview: View {
+    @EnvironmentObject var store: CardStore
+    
+    var body: some View {
+      SingleCardView(card: $store.cards[0])
+    }
+  }
+  
+  static var previews: some View {
+    SingleCardPreview()
+      .environmentObject(CardStore(defaultData: true))
+  }
 }

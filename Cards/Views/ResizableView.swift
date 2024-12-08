@@ -34,7 +34,7 @@ import SwiftUI
 
 struct ResizableView: ViewModifier {
   
-  @State private var transform = Transform()
+  @Binding var transform: Transform
   @State private var previousOffset: CGSize = .zero
   @State private var previousRotation: Angle = .zero
   @State private var scale: CGFloat = 1.0
@@ -93,20 +93,33 @@ struct ResizableView: ViewModifier {
       .gesture(dragGesture)
       .gesture(
         SimultaneousGesture(rotationGesture, scaleGesture))
+      .onAppear {
+        previousOffset = transform.offset
+      }
   }
 }
 
-#Preview {
-  RoundedRectangle(cornerRadius: 30.0)
-    .foregroundColor(Color.blue)
-    .resizableView()
-    //.modifier(ResizableView())
+struct ResizableView_Previews: PreviewProvider {
+  struct ResizableViewPreview: View {
+    @State var transform = Transform()
+    
+    var body: some View {
+      RoundedRectangle(cornerRadius: 30.0)
+        .foregroundColor(Color.blue)
+        .resizableView(transform: $transform)
+        //.modifier(ResizableView())
+    }
+  }
+  
+  static var previews: some View {
+    ResizableViewPreview()
+  }
 }
 
 // “pass-through” method
 extension View {
   // You extend the View protocol with a default method. resizableView() is now available on any object that conforms to View. The method simply returns your modifier, but it does make your code easier to read.
-  public func resizableView() -> some View {
-    modifier(ResizableView())
+  func resizableView(transform: Binding<Transform>) -> some View {
+    modifier(ResizableView(transform: transform))
   }
 }
