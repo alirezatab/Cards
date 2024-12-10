@@ -35,6 +35,8 @@
 		C2C007B42D06B0E200FADCAA /* UIIageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C007B32D06B0E200FADCAA /* UIIageExtension.swift */; };
 		C2C007B62D06B63C00FADCAA /* CustomTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C007B52D06B63C00FADCAA /* CustomTransfer.swift */; };
 		C2C007B82D06DD7500FADCAA /* ElementContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C007B72D06DD7500FADCAA /* ElementContextMenu.swift */; };
+		C2C007C92D07C99600FADCAA /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C007C82D07C99600FADCAA /* Shapes.swift */; };
+		C2C007CB2D08410E00FADCAA /* FrameModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C007CA2D08410E00FADCAA /* FrameModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		C2C007B32D06B0E200FADCAA /* UIIageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIIageExtension.swift; sourceTree = "<group>"; };
 		C2C007B52D06B63C00FADCAA /* CustomTransfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransfer.swift; sourceTree = "<group>"; };
 		C2C007B72D06DD7500FADCAA /* ElementContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementContextMenu.swift; sourceTree = "<group>"; };
+		C2C007C82D07C99600FADCAA /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+		C2C007CA2D08410E00FADCAA /* FrameModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,7 @@
 				C2C007512D05872E00FADCAA /* Operators.swift */,
 				C2C007522D05872E00FADCAA /* Transform.swift */,
 				C2C007B52D06B63C00FADCAA /* CustomTransfer.swift */,
+				C2C007C82D07C99600FADCAA /* Shapes.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 			children = (
 				C2C0077F2D05879900FADCAA /* StickerModal.swift */,
 				C2C007B12D0689DC00FADCAA /* PhotosModal.swift */,
+				C2C007CA2D08410E00FADCAA /* FrameModal.swift */,
 			);
 			path = CardModalViews;
 			sourceTree = "<group>";
@@ -367,6 +373,7 @@
 				C2C007802D05879900FADCAA /* StickerModal.swift in Sources */,
 				C2C0076C2D05872E00FADCAA /* TextExtensions.swift in Sources */,
 				C2C0076D2D05872E00FADCAA /* Card.swift in Sources */,
+				C2C007CB2D08410E00FADCAA /* FrameModal.swift in Sources */,
 				C2C0076E2D05872E00FADCAA /* CardElement.swift in Sources */,
 				C2C0076F2D05872E00FADCAA /* CardStore.swift in Sources */,
 				C2C007702D05872E00FADCAA /* Operators.swift in Sources */,
@@ -385,6 +392,7 @@
 				C2C0077C2D05872E00FADCAA /* ResizableView.swift in Sources */,
 				C2C007B22D0689DC00FADCAA /* PhotosModal.swift in Sources */,
 				C2C0077D2D05872E00FADCAA /* CardsApp.swift in Sources */,
+				C2C007C92D07C99600FADCAA /* Shapes.swift in Sources */,
 				C2C007B42D06B0E200FADCAA /* UIIageExtension.swift in Sources */,
 				C2C007B62D06B63C00FADCAA /* CustomTransfer.swift in Sources */,
 			);

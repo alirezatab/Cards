@@ -9,9 +9,11 @@ import SwiftUI
 
 struct CardToolbar: ViewModifier {
   @Environment(\.dismiss) var dismiss
+  @EnvironmentObject var store: CardStore
   @Binding var currentModal: ToolbarSelection?
   @Binding var card: Card
   @State private var stickerImage: UIImage?
+  @State private var frameIndex: Int?
   
   func body(content: Content) -> some View {
     content
@@ -43,6 +45,14 @@ struct CardToolbar: ViewModifier {
       }
       .sheet(item: $currentModal) { item in
         switch item {
+        case .frameModal:
+          FrameModal(frameIndex: $frameIndex)
+            .onDisappear {
+              if let frameIndex {
+                card.update(store.selectedElement, frameIndex: frameIndex)
+              }
+              frameIndex = nil
+            }
         case .stickerModal:
           StickerModal(stickerImage: $stickerImage)
             .onDisappear {

@@ -37,4 +37,14 @@ struct Card: Identifiable {
       elements.remove(at: index)
     }
   }
+  
+  // Note: If later, you create another type of element such as ColorElement, to which you also want to be able to add clip frames, you could create a protocol Clippable, with frameIndex as a required property. Instead of testing to see if an element is an ImageElement, you can test to see whether the element is Clippable.
+  mutating func update(_ element: CardElement?, frameIndex: Int) {
+    if let element = element as? ImageElement,
+        let index = element.index(in: elements) {
+      var newElement = element
+      newElement.frameIndex = frameIndex
+      elements[index] = newElement
+    }
+  }
 }

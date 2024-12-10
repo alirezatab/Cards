@@ -41,26 +41,25 @@ let initialCards: [Card] = [
 ]
 
 let initialElements: [CardElement] = [
-//  ImageElement(
-//    transform: Transform(
-//      size: CGSize(width: 255, height: 185),
-//      rotation: .init(degrees: 10),
-//      offset: CGSize(width: 40, height: -220)),
-//    image: Image("hedgehog1")),
-//  ImageElement(
-//    transform: Transform(offset: CGSize(width: -62, height: 0)),
-//    image: Image("hedgehog3")),
-//  ImageElement(
-//    transform: Transform(
-//      size: CGSize(width: 295, height: 210),
-//      rotation: .init(degrees: -15),
-//      offset: CGSize(width: -5, height: 178)),
-//    image: Image("hedgehog2")),
-//  TextElement(
-//    transform: Transform(
-//      size: Settings.defaultElementSize * 1.2,
-//      rotation: .zero,
-//      offset: CGSize(width: -38, height: -120)),
-//    text: "Hedgehogs!!!",
-//    textColor: .blue)
+  ImageElement(
+    transform: Transform(
+      size: CGSize(width: 250, height: 180),
+      offset: CGSize(width: 27, height: -140)),
+    uiImage: UIImage(named: "giraffe3")),
+  ImageElement(
+    transform: Transform(
+      size: CGSize(width: 380, height: 270),
+      offset: CGSize(width: -80, height: 25)),
+    uiImage: UIImage(named: "giraffe2")),
+  ImageElement(
+    transform: Transform(
+      size: CGSize(width: 250, height: 180),
+      offset: CGSize(width: 80, height: 205)),
+    uiImage: UIImage(named: "giraffe1")),
+  TextElement(
+    transform: Transform(
+      size: Settings.defaultElementSize * 1.1,
+      offset: CGSize(width: 10, height: -275)),
+    text: "Giraffes!!!",
+    textColor: .black)
 ]

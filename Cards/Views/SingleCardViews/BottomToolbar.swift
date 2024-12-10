@@ -16,7 +16,7 @@ struct ToolbarButton: View {
     .photoModal: ("photos", "photo"),
     .frameModal: ("Frames", "square.on.circle"),
     .stickerModal: ("Stickers", "heart.circle"),
-    .textModal: ("Text", "textFormat"),
+    .textModal: ("Text", "textformat")
   ]
   
   var body: some View {
@@ -34,6 +34,7 @@ struct ToolbarButton: View {
 
 struct BottomToolbar: View {
   
+  @EnvironmentObject var store: CardStore
   @Binding var modal: ToolbarSelection?
   @Binding var card: Card
   
@@ -41,6 +42,11 @@ struct BottomToolbar: View {
     HStack {
       ForEach(ToolbarSelection.allCases) { selection in
         switch selection {
+        case .frameModal:
+          defaultButton(selection)
+            .disabled(
+              store.selectedElement == nil || !(store.selectedElement is ImageElement)
+            )
         case .photoModal:
           Button {
             
@@ -48,13 +54,17 @@ struct BottomToolbar: View {
             PhotosModal(card: $card)
           }
         default:
-          Button {
-            modal = selection
-          } label: {
-            ToolbarButton(modal: selection)
-          }
+          defaultButton(selection)
         }
       }
+    }
+  }
+  
+  func defaultButton(_ selection: ToolbarSelection) -> some View {
+    Button {
+      modal = selection
+    } label: {
+      ToolbarButton(modal: selection)
     }
   }
 }
@@ -64,4 +74,5 @@ struct BottomToolbar: View {
     modal: .constant(.stickerModal),
     card: .constant(Card()))
   .padding()
+  .environmentObject(CardStore())
 }
