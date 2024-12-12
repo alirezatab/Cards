@@ -8,19 +8,36 @@
 import SwiftUI
 
 struct CardListView: View {
-  
+  // scenePhase enumerations are, active, inactive, background
+  @Environment(\.scenePhase) private var scenePhase
   @EnvironmentObject var store: CardStore
   @State private var selectedCard: Card?
   
   var body: some View {
-    list
-      .fullScreenCover(item: $selectedCard) { card in
-        if let index = store.index(for: card) {
-          SingleCardView(card: $store.cards[index])
-        } else {
-          fatalError("Unable to locate selected card")
+    VStack {
+      list
+        .fullScreenCover(item: $selectedCard) { card in
+          if let index = store.index(for: card) {
+            SingleCardView(card: $store.cards[index])
+              .onChange(of: scenePhase) { newScenePhase in
+                if newScenePhase == .inactive {
+                  store.cards[index].save()
+                }
+              }
+          } else {
+            fatalError("Unable to locate selected card")
+          }
         }
+        .onAppear {
+          print(URL.documentsDirectory)
+        }
+      
+      // When you tap the Add button, you call your new addCard() method in store. This adds a new Card to the store’s cards array and saves the card file to disk.
+      // By changing selectedCard, you trigger fullScreenCover(item:), which displays the new card.
+      Button("Add") {
+        selectedCard = store.addCard()
       }
+    }
   }
   
   var list: some View {

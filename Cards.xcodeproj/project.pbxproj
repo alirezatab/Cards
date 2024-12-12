@@ -37,6 +37,8 @@
 		C2C007B82D06DD7500FADCAA /* ElementContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C007B72D06DD7500FADCAA /* ElementContextMenu.swift */; };
 		C2C007C92D07C99600FADCAA /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C007C82D07C99600FADCAA /* Shapes.swift */; };
 		C2C007CB2D08410E00FADCAA /* FrameModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C007CA2D08410E00FADCAA /* FrameModal.swift */; };
+		C2DDC5602D0AE713006A089F /* AngleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDC55F2D0AE713006A089F /* AngleExtensions.swift */; };
+		C2DDC5622D0B0680006A089F /* TextModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDC5612D0B0680006A089F /* TextModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,8 @@
 		C2C007B72D06DD7500FADCAA /* ElementContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementContextMenu.swift; sourceTree = "<group>"; };
 		C2C007C82D07C99600FADCAA /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 		C2C007CA2D08410E00FADCAA /* FrameModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameModal.swift; sourceTree = "<group>"; };
+		C2DDC55F2D0AE713006A089F /* AngleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleExtensions.swift; sourceTree = "<group>"; };
+		C2DDC5612D0B0680006A089F /* TextModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,7 @@
 				C2C0074B2D05872E00FADCAA /* ColorExtensions.swift */,
 				C2C0074C2D05872E00FADCAA /* TextExtensions.swift */,
 				C2C007B32D06B0E200FADCAA /* UIIageExtension.swift */,
+				C2DDC55F2D0AE713006A089F /* AngleExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 				C2C0077F2D05879900FADCAA /* StickerModal.swift */,
 				C2C007B12D0689DC00FADCAA /* PhotosModal.swift */,
 				C2C007CA2D08410E00FADCAA /* FrameModal.swift */,
+				C2DDC5612D0B0680006A089F /* TextModal.swift */,
 			);
 			path = CardModalViews;
 			sourceTree = "<group>";
@@ -380,6 +386,7 @@
 				C2C007712D05872E00FADCAA /* Transform.swift in Sources */,
 				C2C007722D05872E00FADCAA /* PreviewData.swift in Sources */,
 				C2C007B82D06DD7500FADCAA /* ElementContextMenu.swift in Sources */,
+				C2DDC5622D0B0680006A089F /* TextModal.swift in Sources */,
 				C2C007732D05872E00FADCAA /* BottomToolbar.swift in Sources */,
 				C2C007742D05872E00FADCAA /* CardDetailView.swift in Sources */,
 				C2C007752D05872E00FADCAA /* CardElementView.swift in Sources */,
@@ -395,6 +402,7 @@
 				C2C007C92D07C99600FADCAA /* Shapes.swift in Sources */,
 				C2C007B42D06B0E200FADCAA /* UIIageExtension.swift in Sources */,
 				C2C007B62D06B63C00FADCAA /* CustomTransfer.swift in Sources */,
+				C2DDC5602D0AE713006A089F /* AngleExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
